@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+   <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .quiz-box {
+        background: white;
+        width: 90%;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 32px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #answer-buttons {
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .answer-btn,
+    #next-btn,
+    #restart-btn {
+        padding: 10px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .answer-btn {
+        text-align: left;
+        background: white;
+    }
+
+    .answer-btn:hover {
+        background: #eee;
+    }
+
+    .correct {
+        background: lightgreen;
+    }
+
+    .wrong {
+        background: lightcoral;
+    }
+
+    #next-btn,
+    #restart-btn {
+        width: 100%;
+        margin-top: 20px;
+        background: #333;
+        color: white;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    @media (max-width: 500px) {
+     .quiz-box {
+         width: 95%;
+        }
+    }
+
+   </style>
+</head>
+
+<body>
+
+    <div class="quiz-box">
+
+        <div id="quiz">
+            <h1>Web Development Quiz</h1>
+
+            <div class="top">
+                <p id="question-count">Question 1 of 4</p>
+                <p id="score">Score: 0</p>
+            </div>
+
+            <h2 id="question">Question goes here</h2>
+
+            <div id="answer-buttons"></div>
+
+            <button id="next-btn">Next</button>
+        </div>
+
+              <div id="result" class="hide">
+                <h1>Quiz Finished!</h1>
+
+                <p>Your final score is:</p>
+
+                <h2 id="final-score">0 / 4</h2>
+
+                <p id="message"></p>
+
+                <button id="restart-btn">Restart Quiz</button>
+            </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
